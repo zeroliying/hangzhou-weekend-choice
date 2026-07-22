@@ -7,29 +7,29 @@
   <title>杭州暑假周末候选玩法</title>
   <style>
     :root {
-      --ink: #4d536b; --muted: #737b91; --paper: #f4f9ff; --white: #fff;
-      --pink: #f5eefa; --pink-strong: #8c76ad; --lavender: #e9e5ff; --lavender-strong: #7869a8;
-      --mint: #e8f5ff; --mint-strong: #6286a8; --yellow: #f4efff;
-      --blue: #dcefff; --blue-strong: #5b82ad; --line: rgba(105,126,170,.16); --glass: rgba(255,255,255,.66); --shadow: 0 14px 38px rgba(93,113,166,.13);
+      --ink: #48556f; --muted: #6f7d96; --paper: #f2faff; --white: #fff;
+      --pink: #f8e7ef; --pink-strong: #a46f88; --lavender: #e9e1ff; --lavender-strong: #7967ac;
+      --mint: #e3f3ed; --mint-strong: #628f7c; --yellow: #fff2d2;
+      --blue: #d9f1ff; --blue-strong: #5687b1; --line: rgba(104,133,180,.16); --glass: rgba(255,255,255,.48); --glass-border: rgba(255,255,255,.88); --shadow: 0 16px 42px rgba(85,115,166,.14);
       --radius: 26px; --toolbar-h: 72px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--ink); background: radial-gradient(circle at 16% 7%,rgba(210,238,255,.94),transparent 28%),radial-gradient(circle at 91% 25%,rgba(230,222,255,.88),transparent 32%),linear-gradient(145deg,#f7fcff 0%,#edf6ff 48%,#f5f0ff 100%); background-attachment: fixed; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height: 1.65; }
+    body { margin: 0; color: var(--ink); background: radial-gradient(circle at 14% 6%,rgba(195,233,255,.98),transparent 30%),radial-gradient(circle at 89% 22%,rgba(219,204,255,.9),transparent 34%),radial-gradient(circle at 50% 82%,rgba(217,241,255,.72),transparent 35%),linear-gradient(145deg,#f4fbff 0%,#e8f6ff 47%,#f1ebff 100%); background-attachment: fixed; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height: 1.65; }
     button { font: inherit; }
     .bg-shape { position: fixed; z-index: -1; border-radius: 999px; filter: blur(2px); opacity: .65; pointer-events: none; }
     .bg-1 { width: 280px; height: 280px; background: var(--blue); top: 7%; left: -160px; }
     .bg-2 { width: 340px; height: 340px; background: var(--lavender); top: 40%; right: -210px; }
     .bg-3 { width: 290px; height: 290px; background: var(--mint); bottom: 4%; left: -170px; }
-    .toolbar { position: sticky; top: 0; z-index: 20; padding: 10px max(14px,env(safe-area-inset-left)); background: rgba(244,249,255,.68); -webkit-backdrop-filter: blur(22px) saturate(135%); backdrop-filter: blur(22px) saturate(135%); border-bottom: 1px solid rgba(255,255,255,.82); box-shadow: 0 7px 22px rgba(107,126,174,.08); }
+    .toolbar { position: sticky; top: 0; z-index: 20; padding: 10px max(14px,env(safe-area-inset-left)); background: rgba(240,249,255,.5); -webkit-backdrop-filter: blur(28px) saturate(145%); backdrop-filter: blur(28px) saturate(145%); border-bottom: 1px solid rgba(255,255,255,.9); box-shadow: 0 8px 24px rgba(93,121,169,.1),inset 0 1px 0 rgba(255,255,255,.94); }
     .toolbar-inner { max-width: 1100px; margin: auto; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
     .toolbar-inner::-webkit-scrollbar { display: none; }
-    .tool-btn { flex: 0 0 auto; min-height: 42px; padding: 9px 15px; border: 1px solid rgba(255,255,255,.86); border-radius: 999px; background: rgba(255,255,255,.7); color: var(--ink); cursor: pointer; box-shadow: 0 5px 16px rgba(96,116,166,.08),inset 0 1px 0 rgba(255,255,255,.92); transition: .2s ease; }
+    .tool-btn { flex: 0 0 auto; min-height: 42px; padding: 9px 15px; border: 1px solid rgba(255,255,255,.92); border-radius: 999px; background: rgba(255,255,255,.52); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); color: var(--ink); cursor: pointer; box-shadow: 0 6px 18px rgba(86,116,167,.09),inset 0 1px 0 rgba(255,255,255,.98); transition: .2s ease; }
     .tool-btn:hover, .tool-btn:focus-visible { transform: translateY(-1px); border-color: rgba(92,130,170,.42); }
-    .tool-btn.active { background: var(--blue); border-color: transparent; color: #4f7399; font-weight: 700; }
-    .tool-btn.primary { background: var(--lavender); color: #6f5e98; font-weight: 700; }
+    .tool-btn.active { background: rgba(207,237,255,.82); border-color: rgba(255,255,255,.92); color: #4f789d; font-weight: 700; }
+    .tool-btn.primary { background: rgba(225,215,255,.82); color: #6f5c9c; font-weight: 700; }
     main { max-width: 1100px; margin: auto; padding: 52px 18px 80px; }
-    .hero { position: relative; padding: clamp(28px,6vw,58px); border: 1px solid rgba(255,255,255,.88); border-radius: 36px; background: radial-gradient(circle at 91% 18%,rgba(255,255,255,.72) 0 12%,transparent 12.5%),radial-gradient(circle at 78% 104%,rgba(218,209,255,.74) 0 27%,transparent 27.5%),linear-gradient(135deg,rgba(232,247,255,.88),rgba(224,237,255,.76) 52%,rgba(236,230,255,.8)); -webkit-backdrop-filter: blur(18px) saturate(120%); backdrop-filter: blur(18px) saturate(120%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.95); overflow: hidden; }
+    .hero { position: relative; padding: clamp(28px,6vw,58px); border: 1px solid var(--glass-border); border-radius: 36px; background: radial-gradient(circle at 91% 18%,rgba(255,255,255,.7) 0 12%,transparent 12.5%),radial-gradient(circle at 78% 104%,rgba(210,196,255,.7) 0 27%,transparent 27.5%),linear-gradient(135deg,rgba(221,244,255,.68),rgba(207,233,255,.52) 52%,rgba(228,218,255,.62)); -webkit-backdrop-filter: blur(24px) saturate(132%); backdrop-filter: blur(24px) saturate(132%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(190,219,255,.26); overflow: hidden; }
     .hero:after { content: "杭州 · 相见"; position: absolute; right: -12px; bottom: -25px; color: rgba(255,255,255,.54); font-size: clamp(48px,9vw,96px); font-weight: 900; letter-spacing: .08em; white-space: nowrap; }
     .invite-from { position: relative; z-index: 1; display: inline-flex; align-items: center; margin: 0 0 14px; padding: 6px 12px; border: 1px solid rgba(92,130,170,.16); border-radius: 999px; background: rgba(255,255,255,.68); color: #617fa1; font-size: 13px; font-weight: 800; letter-spacing: .08em; }
     .eyebrow { position: relative; z-index: 1; margin: 0 0 9px; font-size: 13px; letter-spacing: .18em; font-weight: 800; color: var(--blue-strong); }
@@ -44,7 +44,9 @@
     .section[data-category="indoor"] .count { background: var(--mint); color: var(--mint-strong); }
     .section[data-category="food"] .count { background: var(--yellow); color: #9a7b38; }
     .grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; }
-    .card { min-width: 0; padding: 21px; background: var(--glass); border: 1px solid rgba(255,255,255,.84); border-radius: var(--radius); -webkit-backdrop-filter: blur(16px) saturate(118%); backdrop-filter: blur(16px) saturate(118%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.94); transition: opacity .22s,filter .22s,transform .22s,border .22s; }
+    .card { position: relative; min-width: 0; padding: 21px; background: linear-gradient(145deg,rgba(255,255,255,.6),rgba(255,255,255,.34)); border: 1px solid var(--glass-border); border-radius: var(--radius); -webkit-backdrop-filter: blur(24px) saturate(128%); backdrop-filter: blur(24px) saturate(128%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(194,219,255,.2); overflow: hidden; transition: opacity .22s,filter .22s,transform .22s,border .22s; }
+    .card:before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(118deg,rgba(255,255,255,.46) 0 9%,transparent 28% 68%,rgba(221,210,255,.18) 88% 100%); pointer-events: none; }
+    .card > * { position: relative; z-index: 1; }
     .card:hover { transform: translateY(-2px); }
     .card.excluded { opacity: .53; filter: grayscale(.45); }
     .card.favorite { border-color: rgba(183,119,145,.38); }
@@ -67,14 +69,14 @@
     .vote.fav.selected { background: var(--pink); border-color: transparent; color: #9a6078; font-weight: 800; }
     .vote.no.selected { background: #ebe9eb; border-color: transparent; color: #6d6770; font-weight: 800; }
     .card[hidden], .section[hidden] { display: none; }
-    .extra-idea { margin: 4px 0 30px; padding: clamp(22px,4vw,34px); border: 1px solid rgba(255,255,255,.86); border-radius: 30px; background: radial-gradient(circle at 94% 16%,rgba(233,225,255,.82) 0 9%,transparent 9.5%),linear-gradient(135deg,rgba(239,249,255,.78) 0 52%,rgba(239,235,255,.72) 52% 100%); -webkit-backdrop-filter: blur(17px) saturate(120%); backdrop-filter: blur(17px) saturate(120%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.96); }
+    .extra-idea { margin: 4px 0 30px; padding: clamp(22px,4vw,34px); border: 1px solid var(--glass-border); border-radius: 30px; background: radial-gradient(circle at 94% 16%,rgba(222,211,255,.68) 0 9%,transparent 9.5%),linear-gradient(135deg,rgba(228,247,255,.58) 0 52%,rgba(235,228,255,.54) 52% 100%); -webkit-backdrop-filter: blur(24px) saturate(130%); backdrop-filter: blur(24px) saturate(130%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.98); }
     .extra-idea h2 { margin: 0; font-size: clamp(23px,3.2vw,32px); }
     .extra-idea p { margin: 6px 0 14px; color: var(--muted); font-size: 14px; }
     .extra-input { display: block; width: 100%; min-height: 112px; resize: vertical; padding: 14px 16px; border: 1px solid rgba(92,130,170,.2); border-radius: 18px; outline: none; background: rgba(255,255,255,.88); color: var(--ink); font: inherit; line-height: 1.65; box-shadow: inset 0 1px 0 rgba(255,255,255,.8); transition: border-color .2s,box-shadow .2s; }
     .extra-input:focus { border-color: rgba(92,130,170,.48); box-shadow: 0 0 0 4px rgba(220,238,251,.72); }
     .extra-input::placeholder { color: #9aa1ae; }
     .extra-save-note { display: block; margin-top: 9px; color: #708b80; font-size: 12px; }
-    .results { margin-top: 22px; padding: clamp(22px,4vw,38px); border-radius: 32px; background: radial-gradient(circle at 96% 12%,rgba(225,217,255,.8) 0 9%,transparent 9.5%),linear-gradient(145deg,rgba(255,255,255,.74),rgba(230,244,255,.68) 58%,rgba(238,232,255,.72)); border: 1px solid rgba(255,255,255,.86); -webkit-backdrop-filter: blur(18px) saturate(120%); backdrop-filter: blur(18px) saturate(120%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.96); scroll-margin-top: 88px; }
+    .results { margin-top: 22px; padding: clamp(22px,4vw,38px); border-radius: 32px; background: radial-gradient(circle at 96% 12%,rgba(215,202,255,.66) 0 9%,transparent 9.5%),linear-gradient(145deg,rgba(255,255,255,.58),rgba(213,239,255,.48) 58%,rgba(231,222,255,.54)); border: 1px solid var(--glass-border); -webkit-backdrop-filter: blur(26px) saturate(132%); backdrop-filter: blur(26px) saturate(132%); box-shadow: var(--shadow),inset 0 1px 0 rgba(255,255,255,.98); scroll-margin-top: 88px; }
     .results h2 { margin: 0; font-size: clamp(26px,4vw,38px); }
     .results-intro { margin: 6px 0 21px; color: var(--muted); }
     .result-empty { padding: 25px; text-align: center; border: 1px dashed rgba(100,88,105,.2); border-radius: 18px; color: var(--muted); }
@@ -188,12 +190,12 @@
           ['bar','🍸','找家酒吧或 Livehouse 喝一杯','可以听歌、聊天或微醺一下，跟着当晚的心情选。',['酒吧','Livehouse','微醺']],
           ['nightmarket','🍢','夜市闲逛 + 随机小吃','不做攻略式扫街，看到想吃的就分着尝。',['夜市','小吃','随性']]
         ]},
-        { id:'indoor', title:'室内放松活动', kicker:'下雨、太热或单纯想躺的时候', tint:'#e8f5ff', items:[
+        { id:'indoor', title:'室内放松活动', kicker:'下雨、太热或单纯想躺的时候', tint:'#e3f3ed', items:[
           ['spa','💆','三个人一起做 SPA / 按摩','走累了集中回血，选交通方便、环境舒服的店。',['放松','回血','室内']],
           ['home','🎲','在家玩桌游','点外卖、开空调，轻轻松松玩几局，谁都不用维持旅游状态。',['宅家','桌游','轻松']],
           ['pottery','🏺','陶艺 / 银饰 / 手作体验','一起做一个能带走的小纪念，慢慢玩不赶时间。',['手作','纪念','安静']]
         ]},
-        { id:'food', title:'饮食候选', kicker:'三个人的胃，也来一起心选', tint:'#f2ecff', items:[
+        { id:'food', title:'饮食候选', kicker:'三个人的胃，也来一起心选', tint:'#f8e7ef', items:[
           ['hangzhou-food','🥢','正式吃一顿杭帮菜','从经典老字号与本地口碑店里挑，舒舒服服坐下来尝一顿杭州味。',['正餐','杭州味','经典']],
           ['taizhou-food','🦀','正式吃一顿台州菜','海鲜、家烧与糯叽叽，三个人一起点几道招牌菜刚刚好。',['正餐','海鲜','浙江味']],
           ['quzhou-food','🌶️','正式吃一顿衢州菜','去衢村长等有特色的小馆，鸭头、小炒和香辣滋味都可以尝尝。',['正餐','香辣','浙江味']],
