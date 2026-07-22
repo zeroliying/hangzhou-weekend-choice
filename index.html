@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#fffaf6">
+  <meta name="theme-color" content="#f7f8ff">
   <title>杭州暑假周末候选玩法</title>
   <style>
     :root {
-      --ink: #4f4a55; --muted: #7f7885; --paper: #fffaf6; --white: #fffefd;
-      --pink: #f7dfe5; --pink-strong: #c76f88; --lavender: #e9e2f5;
-      --mint: #dff1e7; --mint-strong: #5c8c77; --yellow: #faedc9;
-      --blue: #dfeef7; --line: rgba(100,88,105,.13); --shadow: 0 12px 34px rgba(112,93,111,.10);
+      --ink: #4d4b61; --muted: #79778d; --paper: #f7f8ff; --white: #fffefe;
+      --pink: #e9e2f7; --pink-strong: #8c70b1; --lavender: #e8e2f8;
+      --mint: #e1eefb; --mint-strong: #6686aa; --yellow: #eeeafb;
+      --blue: #dfeefa; --line: rgba(91,88,130,.14); --shadow: 0 12px 34px rgba(91,88,135,.11);
       --radius: 26px; --toolbar-h: 72px;
     }
     * { box-sizing: border-box; }
@@ -18,24 +18,22 @@
     body { margin: 0; color: var(--ink); background: var(--paper); font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height: 1.65; }
     button { font: inherit; }
     .bg-shape { position: fixed; z-index: -1; border-radius: 999px; filter: blur(2px); opacity: .65; pointer-events: none; }
-    .bg-1 { width: 260px; height: 260px; background: var(--pink); top: 8%; left: -150px; }
+    .bg-1 { width: 260px; height: 260px; background: var(--lavender); top: 8%; left: -150px; }
     .bg-2 { width: 340px; height: 340px; background: var(--blue); top: 42%; right: -210px; }
-    .toolbar { position: sticky; top: 0; z-index: 20; padding: 10px max(14px,env(safe-area-inset-left)); background: rgba(255,250,246,.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .toolbar { position: sticky; top: 0; z-index: 20; padding: 10px max(14px,env(safe-area-inset-left)); background: rgba(247,248,255,.9); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
     .toolbar-inner { max-width: 1100px; margin: auto; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
     .toolbar-inner::-webkit-scrollbar { display: none; }
     .tool-btn { flex: 0 0 auto; min-height: 42px; padding: 9px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--ink); cursor: pointer; box-shadow: 0 4px 14px rgba(112,93,111,.06); transition: .2s ease; }
-    .tool-btn:hover, .tool-btn:focus-visible { transform: translateY(-1px); border-color: rgba(199,111,136,.35); }
-    .tool-btn.active { background: var(--pink); border-color: transparent; color: #87485b; font-weight: 700; }
-    .tool-btn.primary { background: var(--mint); color: #466f5e; font-weight: 700; }
+    .tool-btn:hover, .tool-btn:focus-visible { transform: translateY(-1px); border-color: rgba(126,105,176,.38); }
+    .tool-btn.active { background: var(--lavender); border-color: transparent; color: #665287; font-weight: 700; }
+    .tool-btn.primary { background: var(--blue); color: #4f7094; font-weight: 700; }
     main { max-width: 1100px; margin: auto; padding: 52px 18px 80px; }
-    .hero { position: relative; padding: clamp(28px,6vw,58px); border: 1px solid rgba(255,255,255,.8); border-radius: 36px; background: linear-gradient(135deg,rgba(247,223,229,.92),rgba(250,237,201,.76) 48%,rgba(223,241,231,.9)); box-shadow: var(--shadow); overflow: hidden; }
+    .hero { position: relative; padding: clamp(28px,6vw,58px); border: 1px solid rgba(255,255,255,.85); border-radius: 36px; background: linear-gradient(135deg,rgba(223,238,250,.96),rgba(232,226,248,.88) 52%,rgba(218,231,250,.94)); box-shadow: var(--shadow); overflow: hidden; }
     .hero:after { content: "杭州 · 周末"; position: absolute; right: -12px; bottom: -25px; color: rgba(255,255,255,.54); font-size: clamp(48px,9vw,96px); font-weight: 900; letter-spacing: .08em; white-space: nowrap; }
-    .eyebrow { position: relative; z-index: 1; margin: 0 0 9px; font-size: 13px; letter-spacing: .18em; font-weight: 800; color: #8d6571; }
+    .eyebrow { position: relative; z-index: 1; margin: 0 0 9px; font-size: 13px; letter-spacing: .18em; font-weight: 800; color: #756394; }
     h1 { position: relative; z-index: 1; margin: 0; max-width: 820px; font-size: clamp(30px,5.4vw,58px); line-height: 1.16; letter-spacing: -.035em; }
     .subtitle { position: relative; z-index: 1; max-width: 780px; margin: 18px 0 0; color: #6f6873; font-size: clamp(15px,2vw,18px); }
-    .tip { margin: 22px 0 48px; padding: 18px 21px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; color: var(--muted); box-shadow: 0 8px 24px rgba(112,93,111,.06); }
-    .tip strong { color: #8e5365; }
-    .section { margin: 0 0 52px; scroll-margin-top: 90px; }
+    .section { margin: 48px 0 52px; scroll-margin-top: 90px; }
     .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin: 0 4px 17px; }
     .section-title { margin: 0; font-size: clamp(24px,3vw,34px); line-height: 1.2; }
     .section-kicker { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
@@ -44,7 +42,7 @@
     .card { min-width: 0; padding: 21px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); transition: opacity .22s,filter .22s,transform .22s,border .22s; }
     .card:hover { transform: translateY(-2px); }
     .card.excluded { opacity: .53; filter: grayscale(.45); }
-    .card.favorite { border-color: rgba(199,111,136,.35); }
+    .card.favorite { border-color: rgba(126,105,176,.38); }
     .card-top { display: flex; align-items: flex-start; gap: 13px; }
     .emoji { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border-radius: 15px; background: var(--card-tint,var(--blue)); font-size: 23px; }
     .card-copy { min-width: 0; flex: 1; }
@@ -60,10 +58,10 @@
     .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 17px; }
     .vote { min-height: 43px; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: var(--ink); cursor: pointer; transition: .18s ease; }
     .vote:hover, .vote:focus-visible { transform: translateY(-1px); box-shadow: 0 6px 15px rgba(112,93,111,.09); }
-    .vote.fav.selected { background: var(--pink); border-color: transparent; color: #a04f68; font-weight: 800; }
+    .vote.fav.selected { background: var(--lavender); border-color: transparent; color: #6d5792; font-weight: 800; }
     .vote.no.selected { background: #ebe9eb; border-color: transparent; color: #6d6770; font-weight: 800; }
     .card[hidden], .section[hidden] { display: none; }
-    .results { margin-top: 22px; padding: clamp(22px,4vw,38px); border-radius: 32px; background: linear-gradient(145deg,#fff,#f7f1f8); border: 1px solid var(--line); box-shadow: var(--shadow); scroll-margin-top: 88px; }
+    .results { margin-top: 22px; padding: clamp(22px,4vw,38px); border-radius: 32px; background: linear-gradient(145deg,#fff,#edf3fc 52%,#f0ebfa); border: 1px solid var(--line); box-shadow: var(--shadow); scroll-margin-top: 88px; }
     .results h2 { margin: 0; font-size: clamp(26px,4vw,38px); }
     .results-intro { margin: 6px 0 21px; color: var(--muted); }
     .result-empty { padding: 25px; text-align: center; border: 1px dashed rgba(100,88,105,.2); border-radius: 18px; color: var(--muted); }
@@ -72,12 +70,12 @@
     .result-block h3 { margin: 0 0 10px; }
     .result-row { display: grid; grid-template-columns: 90px 1fr; gap: 10px; margin: 7px 0; font-size: 14px; }
     .result-label { font-weight: 800; }
-    .result-label.f { color: #a64e69; } .result-label.n { color: #6e6870; } .result-label.o { color: #73866e; }
+    .result-label.f { color: #745d9c; } .result-label.n { color: #6e6870; } .result-label.o { color: #6683a3; }
     .result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 21px; }
     .result-actions button { min-height: 44px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); color: var(--ink); cursor: pointer; }
-    .result-actions .strong { background: var(--mint); color: #466f5e; border-color: transparent; font-weight: 800; }
+    .result-actions .strong { background: var(--blue); color: #4f7094; border-color: transparent; font-weight: 800; }
     .footer-note { margin: 28px 0 0; text-align: center; color: var(--muted); font-size: 14px; }
-    .footer-note strong { display: block; margin-bottom: 5px; color: #8e5365; font-size: 16px; }
+    .footer-note strong { display: block; margin-bottom: 5px; color: #71608f; font-size: 16px; }
     .toast { position: fixed; z-index: 50; left: 50%; bottom: max(22px,env(safe-area-inset-bottom)); transform: translate(-50%,20px); padding: 11px 17px; border-radius: 999px; color: white; background: rgba(77,71,81,.92); opacity: 0; pointer-events: none; transition: .25s ease; box-shadow: var(--shadow); }
     .toast.show { opacity: 1; transform: translate(-50%,0); }
     @media (max-width: 680px) {
@@ -86,7 +84,6 @@
       main { padding: 26px 13px 62px; }
       .hero { border-radius: 28px; }
       .hero:after { font-size: 48px; }
-      .tip { margin-bottom: 38px; }
       .grid { grid-template-columns: 1fr; }
       .section { margin-bottom: 42px; }
       .card { padding: 18px; }
@@ -113,20 +110,18 @@
       <h1>欢迎花儿和33来杭州！你们更想怎么玩？</h1>
       <p class="subtitle">两天半不够逛完杭州，但足够一起选出最想要的快乐。山水、夜风、躺平和好吃的都摆在这里——你们只管心动，行程交给我们之后再拼。</p>
     </header>
-    <p class="tip"><strong>怎么选：</strong>点击“♡”表示想去，点击“⊘”表示不想去。没有操作的项目会归入“其他未选”：不排斥，也没非去不可。选择会自动保存在当前浏览器里，但没有后台数据库；全部选完后，请先点“保存 / 更新结果”，确认无误再复制发给我哦。</p>
-
     <div id="sections"></div>
 
     <section class="results" id="results">
       <h2>最终选择结果</h2>
-      <p class="results-intro">先保存 / 更新汇总，确认四类选择都对，再复制发回群里。</p>
+      <p class="results-intro">选择会自动保存在当前浏览器里，但没有后台数据库；全部选完后，请先点“保存 / 更新结果”，再复制发给我哦～</p>
       <div id="resultContent" class="result-empty">还没有生成结果，先随便点点看，或者直接生成也可以。</div>
       <div class="result-actions">
         <button class="strong" id="generateBottom">保存 / 更新结果</button>
         <button id="copyBtn">复制结果</button>
       </div>
     </section>
-    <p class="footer-note"><strong>杭州很大，周末很短，最重要的是我们三个一起玩得开心。</strong>等你们按下心选，我们再把这些小愿望拼成刚刚好的周末。餐饮人均是常见消费区间，仅供三个人控制预算；榜单、价格和营业状态会变化，出发前再确认一下。</p>
+    <p class="footer-note"><strong>杭州很大，周末很短，最重要的是我们三个一起玩得开心。</strong>等你们按下心选，我们再把这些小愿望拼成刚刚好的周末。餐饮人均是常见消费区间，方便大家轻松挑选；榜单、价格和营业状态会变化，出发前我们再一起确认。</p>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -135,7 +130,7 @@
       'use strict';
       const STORAGE_KEY = 'hangzhou-weekend-choice-list-v1';
       const categories = [
-        { id:'day', title:'白天候选', kicker:'有山有水，也有咖啡和茶', tint:'#dfeef7', items:[
+        { id:'day', title:'白天候选', kicker:'有山有水，也有咖啡和茶', tint:'#dcecf9', items:[
           ['westlake','🌿','九溪十八涧—龙井—满觉陇轻徒步','树荫、茶园和溪水都在线；暑假建议早点出发。',['经典杭州','自然','半天']],
           ['beishan','🪷','西湖半日游','沿湖挑一段舒服地走走停停，看看荷花、吹吹风，不追求一次逛完。',['经典杭州','湖景','半天']],
           ['xixi','🛶','西溪国家湿地公园慢游','坐摇橹船、看水乡湿地；不赶路的话很适合三个人聊天。',['经典杭州','湿地','半天+']],
@@ -143,29 +138,29 @@
           ['silk','🧵','中国丝绸博物馆','从织物、服饰到丝路故事，馆舍好逛也好拍。',['文化','室内','免费展馆']],
           ['xiaohestreet','🏘️','大兜路 + 小河直街慢逛','沿运河看看老街、小店和白墙黛瓦，累了随时找地方坐下。',['运河','老街','慢逛']],
           ['hefeng','🏮','南宋御街—河坊街—十五奎巷','老城烟火、古街小店与巷子散步一网打尽。',['逛街','老城','小吃']],
-          ['hubin','🛍️','湖滨步行街逛街 + 看一眼西湖','城市逛街选手友好，热了随时进商场续命。',['逛街','轻松','市中心']],
           ['coffee','☕','找一家景观咖啡店慢慢坐','不卷打卡，挑湖边、茶园边或社区店聊到尽兴。',['咖啡','聊天','松弛']],
           ['tea','🍵','茶馆喝茶发呆','体验杭州式慢生活，认真喝茶或纯聊天都行。',['喝茶','聊天','松弛']]
         ]},
-        { id:'night', title:'晚上候选', kicker:'晚风、灯光、小酒，选一个舒服的夜晚', tint:'#e9e2f5', items:[
+        { id:'night', title:'晚上候选', kicker:'晚风、灯光、小酒，选一个舒服的夜晚', tint:'#e8e1f7', items:[
           ['westlake-night','🌙','西湖夜游 + 湖边散步','看亮灯后的湖面，走累了就近找地方坐。',['自然','夜景','散步']],
+          ['xizi-corridor','✨','西子连廊（西子廊桥）看夜景','看看光影大屏，遇上盲盒音乐会就停下来听一会儿，再慢慢走到西湖边。',['光影','音乐','夜游']],
           ['qiantang','🌉','钱江新城城市阳台看夜景','钱塘江、城市天际线和灯光，氛围偏现代。',['夜景','城市','拍照']],
           ['bar','🍸','找一家安静小酒馆喝一杯','选精酿、鸡尾酒或自然酒，重点是能好好聊天。',['酒吧','聊天','微醺']],
           ['nightmarket','🍢','夜市闲逛 + 随机小吃','不做攻略式扫街，看到想吃的就分着尝。',['夜市','小吃','随性']]
         ]},
-        { id:'indoor', title:'室内放松活动', kicker:'下雨、太热或单纯想躺的时候', tint:'#dff1e7', items:[
+        { id:'indoor', title:'室内放松活动', kicker:'下雨、太热或单纯想躺的时候', tint:'#e3eefb', items:[
           ['spa','💆','三个人一起做 SPA / 按摩','走累了集中回血，选交通方便、环境舒服的店。',['放松','回血','室内']],
           ['home','🎲','在家玩桌游','点外卖、开空调，轻轻松松玩几局，谁都不用维持旅游状态。',['宅家','桌游','轻松']],
           ['pottery','🏺','陶艺 / 银饰 / 手作体验','一起做一个能带走的小纪念，慢慢玩不赶时间。',['手作','纪念','安静']]
         ]},
-        { id:'food', title:'饮食候选', kicker:'只留人均约 ¥20–250 的真心推荐', tint:'#faedc9', items:[
-          ['hangzhou-food','🥢','正式吃一顿杭帮菜','从米其林必比登与本地口碑店里挑，认真吃一顿但不为环境溢价。',['正餐','杭州味','¥80–200/人']],
-          ['taizhou-food','🦀','正式吃一顿台州菜','海鲜、家烧与糯叽叽，三个人点菜更容易控制预算。',['正餐','海鲜','¥100–250/人']],
-          ['quzhou-food','🌶️','正式吃一顿衢州菜','锁定衢村长等重口味小馆，鸭头、小炒和辣味都安排上。',['正餐','辣味','¥60–150/人']],
-          ['burger','🍔','Three Fingers 汉堡（推荐周五中午在家外卖）','这题不再海选，直接指定 Three Fingers，刚到杭州先边吃边聊。',['周五中午','外卖','¥50–100/人']],
-          ['noodle','🍜','米其林必比登杭州面馆','用一碗现炒浇头面解决一顿，便宜、本地，也不用正襟危坐。',['面食','必比登','¥20–60/人']],
+        { id:'food', title:'饮食候选', kicker:'三个人的胃，也来一起心选', tint:'#eee9fa', items:[
+          ['hangzhou-food','🥢','正式吃一顿杭帮菜','从米其林必比登与本地口碑店里挑，舒舒服服坐下来尝一顿杭州味。',['正餐','杭州味','¥80–200/人']],
+          ['taizhou-food','🦀','正式吃一顿台州菜','海鲜、家烧与糯叽叽，三个人一起点几道招牌菜刚刚好。',['正餐','海鲜','¥100–250/人']],
+          ['quzhou-food','🌶️','正式吃一顿衢州菜','去衢村长等有特色的小馆，鸭头、小炒和香辣滋味都可以尝尝。',['正餐','辣味','¥60–150/人']],
+          ['burger','🍔','Three Fingers 汉堡（推荐周五中午在家外卖）','周五中午就选 Three Fingers，刚到杭州先边吃边聊。',['周五中午','外卖','¥50–100/人']],
+          ['noodle','🍜','米其林必比登杭州面馆','来一碗现炒浇头面，暖呼呼、有杭州味，也不用正襟危坐。',['面食','必比登','¥20–60/人']],
           ['snacks','🥟','衢州烧饼 + 饭团等小食','可以买几样分着尝，既能当早餐，也能作为逛街途中的快乐补给。',['小吃','分享','¥20–60/人']],
-          ['hotpot','🍲','火锅 / 烧烤兜底局','只保留预算内、适合三个人聊天的稳妥店，不为了榜单硬吃。',['聚餐','热闹','¥100–220/人']]
+          ['hotpot','🍲','火锅 / 烧烤热闹局','大家围坐一桌，边烤边涮边聊天，怎么选都热闹。',['聚餐','热闹','¥100–220/人']]
         ]}
       ];
 
@@ -177,14 +172,14 @@
         silk:['中国丝绸博物馆：服饰馆与丝路馆优先','太子湾公园：馆外顺路散步','净慈寺—雷峰塔：想继续文化线可二选一'],
         xiaohestreet:['大兜路历史街区：香积寺旁沿河慢走','小河直街：白墙黛瓦、沿河小店与老杭州生活感','富义仓：粮仓建筑与咖啡空间，适合途中休息'],
         hefeng:['德寿宫遗址博物馆：南宋文化体验','十五奎巷—大马弄：老城烟火与菜市场','南宋御街—河坊街：小店与老建筑集中'],
-        hubin:['湖滨步行街：逛街与西湖无缝切换','湖滨银泰 in77：最稳妥的空调补给站','集贤亭：傍晚沿湖散步的漂亮节点'],
         coffee:['蓝瓶咖啡（天目里）：建筑氛围突出','庆春朴门（灵隐）：庭院与山林感','湖畔居茶楼：想从咖啡切换成湖边喝茶'],
         'westlake-night':['集贤亭：湖边日落与夜色衔接','北山街：梧桐树下看亮灯的西湖','长桥公园：雷峰塔经典夜景机位'],
+        'xizi-corridor':['西子廊桥：裸眼 4D 大屏与夜间光影','盲盒音乐会：不定时出现，遇见就是小惊喜','东坡路—湖滨路：看完顺路去西湖边散步'],
         qiantang:['钱江新城城市阳台：天际线正面视角','杭州大剧院—市民中心：建筑夜景集中','闻涛路滨江步道：适合吹风骑行'],
         bar:['Eudora Station：庭院餐吧，三人聊天友好','酒球会：精酿、现场与年轻氛围','么哈 MOJAR：高德榜提名的塔可微醺据点'],
         nightmarket:['武林夜市：市中心、摊位密集','吴山夜市：古玩小物与夜逛氛围','胜利河美食街：更偏夜宵与聚餐'],
         spa:['潮悦汇高奢足道 SPA：环境舒服，适合三个人一起放松','水裹·汤泉生活：适合长时间躺平','涟泉大江户：日式汤泉氛围备选'],
-        home:['轻松上手：璀璨宝石、花砖物语','可以聊很久：卡坦岛、展翅翱翔','热闹派对：只言片语、行动代号'],
+        home:['卡坦岛','大富翁','斗地主','聊天'],
         pottery:['湖滨 / 武林商圈手作工作室：交通方便、选择较多','满觉陇陶艺工作室：山林氛围更松弛','天目里周末手作市集：先查当周活动'],
         tea:['湖畔居：临西湖喝茶的经典选项','青藤茶馆：老杭州茶馆氛围','中国茶叶博物馆茶体验：和龙井线组合'],
         'hangzhou-food':['都来饭店：2026 米其林必比登新上榜，约 ¥80–150/人','食为鲜（上城）：2026 米其林必比登新上榜，约 ¥80–150/人','福缘居：杭帮菜口碑老店，约 ¥100–200/人'],
