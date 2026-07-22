@@ -41,12 +41,19 @@
     .name-card small { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; font-weight: 500; }
     .name-input { width: 100%; min-height: 45px; padding: 9px 14px; border: 1px solid rgba(91,126,166,.2); border-radius: 15px; outline: none; background: rgba(238,247,250,.62); color: var(--ink); font: inherit; transition: border-color .2s,box-shadow .2s; }
     .name-input:focus { border-color: rgba(92,130,170,.48); box-shadow: 0 0 0 4px rgba(220,238,251,.7); }
-    .wind-card { display: grid; justify-items: center; gap: 6px; margin: 14px 0 0; padding: 18px 20px; border: 1px solid rgba(109,143,129,.14); border-radius: 23px; background: radial-gradient(circle at 86% 18%,rgba(212,231,220,.58),transparent 32%),linear-gradient(135deg,rgba(224,239,244,.48),rgba(226,231,243,.34),rgba(217,232,222,.4)); -webkit-backdrop-filter: blur(24px) saturate(112%); backdrop-filter: blur(24px) saturate(112%); box-shadow: 0 12px 30px rgba(78,101,130,.08); text-align: center; }
+    .wind-card { display: grid; justify-items: center; gap: 6px; margin: 14px 0 0; padding: 18px 20px; border: 1px solid rgba(109,143,129,.14); border-radius: 23px; background: radial-gradient(circle at 86% 18%,rgba(212,231,220,.58),transparent 32%),linear-gradient(135deg,rgba(224,239,244,.48),rgba(226,231,243,.34),rgba(217,232,222,.4)); -webkit-backdrop-filter: blur(24px) saturate(112%); backdrop-filter: blur(24px) saturate(112%); box-shadow: 0 12px 30px rgba(78,101,130,.08); text-align: center; scroll-margin-top: 112px; }
     .wind-btn { min-height: 44px; padding: 9px 18px; border: 1px solid rgba(91,148,123,.22); border-radius: 999px; background: linear-gradient(135deg,rgba(196,227,211,.9),rgba(207,224,239,.82)); color: #426d5d; font-weight: 850; cursor: pointer; box-shadow: 0 8px 20px rgba(91,137,119,.14); transition: transform .2s,box-shadow .2s,background .2s; }
     .wind-btn:hover, .wind-btn:focus-visible { transform: translateY(-2px) rotate(-.5deg); background: linear-gradient(135deg,rgba(207,236,221,.96),rgba(216,231,244,.9)); box-shadow: 0 11px 24px rgba(91,137,119,.2); }
     .wind-note { margin: 0; color: var(--muted); font-size: 12px; }
     .wind-reveal { margin: 5px 0 0; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.42); color: #5a7583; font-size: 13px; font-weight: 750; }
     .wind-reveal[hidden] { display: none; }
+    .floating-nav { position: fixed; z-index: 35; right: max(14px,env(safe-area-inset-right)); bottom: max(18px,env(safe-area-inset-bottom)); display: grid; justify-items: end; gap: 8px; }
+    .floating-nav-toggle { min-height: 42px; padding: 8px 14px; border: 1px solid rgba(91,148,123,.2); border-radius: 999px; background: linear-gradient(135deg,rgba(207,234,221,.94),rgba(215,230,242,.92)); -webkit-backdrop-filter: blur(18px) saturate(115%); backdrop-filter: blur(18px) saturate(115%); color: #426d5d; font-weight: 850; cursor: pointer; box-shadow: 0 10px 26px rgba(72,112,99,.2); transition: transform .2s,box-shadow .2s; }
+    .floating-nav-toggle:hover, .floating-nav-toggle:focus-visible { transform: translateY(-2px); box-shadow: 0 13px 30px rgba(72,112,99,.25); }
+    .floating-nav-menu { display: grid; gap: 5px; min-width: 132px; padding: 8px; border: 1px solid rgba(99,130,149,.14); border-radius: 19px; background: linear-gradient(145deg,rgba(226,239,243,.9),rgba(230,226,241,.88),rgba(218,232,221,.86)); -webkit-backdrop-filter: blur(24px) saturate(118%); backdrop-filter: blur(24px) saturate(118%); box-shadow: 0 16px 38px rgba(66,85,108,.2); }
+    .floating-nav-menu[hidden] { display: none; }
+    .floating-nav-menu button { min-height: 37px; padding: 7px 11px; border: 0; border-radius: 12px; background: rgba(255,255,255,.34); color: #53677c; text-align: left; font-weight: 750; cursor: pointer; }
+    .floating-nav-menu button:hover, .floating-nav-menu button:focus-visible { background: rgba(255,255,255,.66); color: #426d5d; }
     .section { margin: 48px 0 52px; scroll-margin-top: 90px; }
     .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin: 0 4px 17px; }
     .section-title { margin: 0; font-size: clamp(24px,3vw,34px); line-height: 1.2; }
@@ -192,6 +199,16 @@
     <p class="tiny-disclaimer">重要但不严肃声明：本攻略由认真、期待、以及一点不靠谱共同完成。如有错别字、过时或错误信息，请不要追责，出发前我们再一起确认。YING正在忙着期待这次相聚，嘻嘻嘻嘻嘻～</p>
     <details class="photo-credits"><summary>照片来源与许可</summary><p>马家坞与酒吧照片由 YING 提供；咖啡与茶馆照片为本页定制氛围图。其余景点照片来自 Wikimedia Commons，已裁切适配卡片，并按各文件页所示的 Creative Commons 或公有领域许可使用：<a href="https://commons.wikimedia.org/wiki/Category:Jiuxi" target="_blank" rel="noopener">九溪</a>、<a href="https://commons.wikimedia.org/wiki/File:West_Lake_Hangzhou.jpg" target="_blank" rel="noopener">西湖</a>、<a href="https://commons.wikimedia.org/wiki/File:Xixi_wetland.jpg" target="_blank" rel="noopener">西溪湿地</a>、<a href="https://commons.wikimedia.org/wiki/File:Tea_plantation_in_hangzhou.JPG" target="_blank" rel="noopener">杭州茶园</a>、<a href="https://commons.wikimedia.org/wiki/File:%E6%9D%AD%E5%B7%9E._%E8%BF%90%E6%B2%B3%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB_%EF%BC%88%E5%B0%8F%E6%B2%B3%E7%9B%B4%E8%A1%97%EF%BC%89_-_panoramio_%281%29.jpg" target="_blank" rel="noopener">小河直街</a>、<a href="https://commons.wikimedia.org/wiki/File:Hefang_Street,_Hangzhou.jpg" target="_blank" rel="noopener">河坊街</a>、<a href="https://commons.wikimedia.org/wiki/File:Hangzhou_West_Lake_at_Night.jpg" target="_blank" rel="noopener">西湖夜景</a>、<a href="https://commons.wikimedia.org/wiki/File:Qianjiang_New_City_20230729.jpg" target="_blank" rel="noopener">钱江新城</a>、<a href="https://commons.wikimedia.org/wiki/File:Hefang_Street_%2825857144167%29.jpg" target="_blank" rel="noopener">夜市</a>。</p></details>
   </main>
+  <div class="floating-nav" id="floatingNav">
+    <div class="floating-nav-menu" id="floatingNavMenu" hidden>
+      <button type="button" data-jump="wind">🍃 随机</button>
+      <button type="button" data-jump="day">☀️ 白天</button>
+      <button type="button" data-jump="night">🌙 晚上</button>
+      <button type="button" data-jump="indoor">🫧 放松</button>
+      <button type="button" data-jump="food">🍜 吃的</button>
+    </div>
+    <button class="floating-nav-toggle" id="floatingNavToggle" type="button" aria-expanded="false" aria-controls="floatingNavMenu">☰ 快速去</button>
+  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -226,7 +243,7 @@
         { id:'indoor', title:'室内放松活动', kicker:'下雨、太热或单纯想躺的时候', tint:'#e3f3ed', items:[
           ['spa','💆','三个人一起做 SPA / 按摩','走累了集中回血，选交通方便、环境舒服的店。',['放松','回血','室内']],
           ['home','🎲','在家玩桌游','点外卖、开空调，轻轻松松玩几局，谁都不用维持旅游状态。',['宅家','桌游','轻松']],
-          ['pottery','🏺','陶艺 / 银饰 / 手作体验','一起做一个能带走的小纪念，慢慢玩不赶时间。',['手作','纪念','安静']]
+          ['pottery','🏺','陶艺 / 银饰 / 拼豆等手作体验','一起做一个能带走的小纪念，慢慢玩不赶时间。',['手作','拼豆','纪念']]
         ]},
         { id:'food', title:'饮食候选', kicker:'三个人的胃，也来一起心选', tint:'#f8e7ef', items:[
           ['hangzhou-food','🥢','正式吃一顿杭帮菜','从经典老字号与本地口碑店里挑，舒舒服服坐下来尝一顿杭州味。',['正餐','杭州味','经典']],
@@ -251,7 +268,7 @@
         nightmarket:['武林夜市：市中心、摊位密集','吴山夜市：古玩小物与夜逛氛围','胜利河美食街：更偏夜宵与聚餐'],
         spa:['潮悦汇高奢足道 SPA：环境舒服，适合三个人一起放松','水裹·汤泉生活：适合长时间躺平','涟泉大江户：日式汤泉氛围备选'],
         home:['卡坦岛','大富翁','斗地主','聊天'],
-        pottery:['湖滨 / 武林商圈手作工作室：交通方便、选择较多','满觉陇陶艺工作室：山林氛围更松弛','天目里周末手作市集：先查当周活动'],
+        pottery:['拼豆工作室：挑喜欢的图案，一起拼一份小纪念','湖滨 / 武林商圈手作工作室：交通方便、选择较多','满觉陇陶艺工作室：山林氛围更松弛','天目里周末手作市集：先查当周活动'],
         tea:['对白茶舍','青藤茶馆','湖畔居'],
         'hangzhou-food':['楼外楼（孤山店）：西湖边的经典杭帮菜老字号','庆春食堂：杭州特色菜热门店，选择丰富','娃哈哈同乐舫（庆春店）：老牌杭州聚餐餐厅','茶人村·西湖醋鱼（西湖龙井店）：茶园边尝杭帮菜','金仲帮中餐厅：一起坐下来慢慢尝杭州味'],
         'taizhou-food':['荣小馆：黄鱼年糕、沙蒜豆面；适合三个人多点几样一起分享','铁定鲜（温州菜）：米其林必比登与大众点评必吃榜上榜'],
@@ -386,6 +403,14 @@
       extraInput.addEventListener('click', () => { if (!extraInput.value.trim()) copyText(extraInput.placeholder,'灵感文本已复制'); });
       extraInput.addEventListener('input', () => { extraIdea=extraInput.value; localStorage.setItem(EXTRA_KEY,extraIdea); invalidateResult(); });
       document.getElementById('windBtn').addEventListener('click',letWindDecide);
+      const floatingNav = document.getElementById('floatingNav');
+      const floatingNavMenu = document.getElementById('floatingNavMenu');
+      const floatingNavToggle = document.getElementById('floatingNavToggle');
+      function closeFloatingNav() { floatingNavMenu.hidden=true; floatingNavToggle.setAttribute('aria-expanded','false'); }
+      floatingNavToggle.addEventListener('click',() => { const willOpen=floatingNavMenu.hidden; floatingNavMenu.hidden=!willOpen; floatingNavToggle.setAttribute('aria-expanded',String(willOpen)); });
+      floatingNavMenu.addEventListener('click',event => { const button=event.target.closest('[data-jump]'); if (!button) return; const target=button.dataset.jump==='wind' ? document.querySelector('.wind-card') : document.querySelector(`.section[data-category="${button.dataset.jump}"]`); closeFloatingNav(); target?.scrollIntoView({behavior:'smooth',block:'start'}); });
+      document.addEventListener('click',event => { if (!floatingNav.contains(event.target)) closeFloatingNav(); });
+      document.addEventListener('keydown',event => { if (event.key==='Escape') closeFloatingNav(); });
       document.getElementById('resetBtn').addEventListener('click', () => { if (confirm('要清空所有心选、婉拒和小愿望，恢复到随大部队模式吗？')) { choices={}; extraIdea=''; extraInput.value=''; invalidateResult(); localStorage.removeItem(STORAGE_KEY); localStorage.removeItem(EXTRA_KEY); filter='all'; document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all')); render(); const reveal=document.getElementById('windReveal'); reveal.hidden=true; reveal.textContent=''; resultEl.className='result-empty'; resultEl.textContent='已恢复默认。重新选也行，直接随大部队也行。'; showToast('已恢复默认'); } });
       document.getElementById('generateTop').addEventListener('click',()=>generateResult(true));
       document.getElementById('generateBottom').addEventListener('click',()=>generateResult(true));
