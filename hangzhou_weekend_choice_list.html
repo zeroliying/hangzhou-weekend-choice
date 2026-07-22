@@ -94,6 +94,7 @@
     .photo-credits summary { cursor: pointer; color: #746991; }
     .photo-credits p { margin: 8px 0 0; }
     .photo-credits a { color: #6b7fa5; }
+    .tiny-disclaimer { max-width: 820px; margin: 16px auto 0; padding: 10px 14px; border-radius: 16px; background: rgba(249,230,238,.62); color: #8b7480; font-size: 12px; text-align: center; }
     .toast { position: fixed; z-index: 50; left: 50%; bottom: max(22px,env(safe-area-inset-bottom)); transform: translate(-50%,20px); padding: 11px 17px; border-radius: 999px; color: white; background: rgba(77,71,81,.92); opacity: 0; pointer-events: none; transition: .25s ease; box-shadow: var(--shadow); }
     .toast.show { opacity: 1; transform: translate(-50%,0); }
     @media (max-width: 680px) {
@@ -118,7 +119,7 @@
       <button class="tool-btn active" data-filter="all">显示全部</button>
       <button class="tool-btn" data-filter="favorite">只看心选</button>
       <button class="tool-btn" data-filter="excluded">查看已排除</button>
-      <button class="tool-btn" id="resetBtn">恢复默认</button>
+      <button class="tool-btn" id="resetBtn">重置选择</button>
       <button class="tool-btn primary" id="generateTop">保存 / 更新结果</button>
     </div>
   </nav>
@@ -135,7 +136,7 @@
     <section class="extra-idea" aria-labelledby="extraIdeaTitle">
       <h2 id="extraIdeaTitle">或许你还想……</h2>
       <p>清单之外的小愿望，也可以偷偷放进来。想去哪里、想吃什么，或者只是想一起做件小事，都可以写。</p>
-      <textarea class="extra-input" id="extraIdea" rows="4" placeholder="比如：想一起拍一组好看的照片、想留一点时间随便走走……"></textarea>
+      <textarea class="extra-input" id="extraIdea" rows="4" placeholder="比如：想在我的床上睡懒觉、想一起拍一组好看的照片、想半夜一起吃泡面聊天……"></textarea>
       <span class="extra-save-note">这里也会自动保存在当前浏览器，并和最终选择结果拼在一起。</span>
     </section>
 
@@ -149,6 +150,7 @@
       </div>
     </section>
     <p class="footer-note"><strong>杭州很大，周末很短，最重要的是我们三个一起玩得开心。</strong>等你们按下心选，我们再把这些小愿望拼成刚刚好的周末。榜单和营业状态会变化，出发前我们再一起确认。</p>
+    <p class="tiny-disclaimer">免责声明：其中大部分包含了我的用心，但也有一些没检查的，有错误的就这样吧嘻嘻嘻嘻</p>
     <details class="photo-credits"><summary>照片来源与许可</summary><p>景点与氛围照片来自 Wikimedia Commons，已裁切适配卡片，并按各文件页所示的 Creative Commons 或公有领域许可使用：<a href="https://commons.wikimedia.org/wiki/Category:Jiuxi" target="_blank" rel="noopener">九溪</a>、<a href="https://commons.wikimedia.org/wiki/File:West_Lake_Hangzhou.jpg" target="_blank" rel="noopener">西湖</a>、<a href="https://commons.wikimedia.org/wiki/File:Xixi_wetland.jpg" target="_blank" rel="noopener">西溪湿地</a>、<a href="https://commons.wikimedia.org/wiki/File:Tea_plantation_in_hangzhou.JPG" target="_blank" rel="noopener">杭州茶园</a>、<a href="https://commons.wikimedia.org/wiki/File:%E6%9D%AD%E5%B7%9E._%E8%BF%90%E6%B2%B3%E6%B0%B4%E4%B8%8A%E5%B7%B4%E5%A3%AB_%EF%BC%88%E5%B0%8F%E6%B2%B3%E7%9B%B4%E8%A1%97%EF%BC%89_-_panoramio_%281%29.jpg" target="_blank" rel="noopener">小河直街</a>、<a href="https://commons.wikimedia.org/wiki/File:Hefang_Street,_Hangzhou.jpg" target="_blank" rel="noopener">河坊街</a>、<a href="https://commons.wikimedia.org/wiki/File:Cafe_Interior_with_Coffee.jpg" target="_blank" rel="noopener">咖啡馆</a>、<a href="https://commons.wikimedia.org/wiki/File:Chinese_tea_house,_Beijing.jpg" target="_blank" rel="noopener">茶馆</a>、<a href="https://commons.wikimedia.org/wiki/File:Hangzhou_West_Lake_at_Night.jpg" target="_blank" rel="noopener">西湖夜景</a>、<a href="https://commons.wikimedia.org/wiki/File:Qianjiang_New_City_20230729.jpg" target="_blank" rel="noopener">钱江新城</a>、<a href="https://commons.wikimedia.org/wiki/File:Elegant_Interior_Of_The_Cocktailbar_%28220991479%29.jpeg" target="_blank" rel="noopener">小酒馆</a>、<a href="https://commons.wikimedia.org/wiki/File:Hefang_Street_%2825857144167%29.jpg" target="_blank" rel="noopener">夜市</a>。</p></details>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -200,14 +202,14 @@
         majiawu:['马家坞观景台：登高看群山与城市层次','清早或傍晚出发：避开暑假正午高温','轻装路线：带水、防晒，穿防滑运动鞋'],
         xiaohestreet:['大兜路历史街区：香积寺旁沿河慢走','小河直街：白墙黛瓦、沿河小店与老杭州生活感','富义仓：粮仓建筑与咖啡空间，适合途中休息'],
         hefeng:['德寿宫遗址博物馆：南宋文化体验','十五奎巷—大马弄：老城烟火与菜市场','南宋御街—河坊街：小店与老建筑集中'],
-        coffee:['蓝瓶咖啡（天目里）：建筑氛围突出','庆春朴门（灵隐）：庭院与山林感','湖畔居茶楼：想从咖啡切换成湖边喝茶'],
+        coffee:['平咖啡','haruhalu','35mm咖啡'],
         'westlake-night':['集贤亭—湖滨路：沿着亮灯后的湖面慢慢走','西子长廊：当天才知道有没有活动，遇见了就是小惊喜','北山街 / 长桥公园：想继续看夜景可以再挑一段'],
         bar:['Eudora Station：庭院餐吧，三人聊天友好','酒球会：精酿、现场与年轻氛围','么哈 MOJAR：高德榜提名的塔可微醺据点'],
         nightmarket:['武林夜市：市中心、摊位密集','吴山夜市：古玩小物与夜逛氛围','胜利河美食街：更偏夜宵与聚餐'],
         spa:['潮悦汇高奢足道 SPA：环境舒服，适合三个人一起放松','水裹·汤泉生活：适合长时间躺平','涟泉大江户：日式汤泉氛围备选'],
         home:['卡坦岛','大富翁','斗地主','聊天'],
         pottery:['湖滨 / 武林商圈手作工作室：交通方便、选择较多','满觉陇陶艺工作室：山林氛围更松弛','天目里周末手作市集：先查当周活动'],
-        tea:['湖畔居：临西湖喝茶的经典选项','青藤茶馆：老杭州茶馆氛围','中国茶叶博物馆茶体验：和龙井线组合'],
+        tea:['对白茶舍','青藤茶馆','湖畔居'],
         'hangzhou-food':['楼外楼（孤山店）：西湖边的经典杭帮菜老字号','庆春食堂：杭州特色菜热门店，选择丰富','娃哈哈同乐舫（庆春店）：老牌杭州聚餐餐厅','茶人村·西湖醋鱼（西湖龙井店）：茶园边尝杭帮菜','金仲帮中餐厅：一起坐下来慢慢尝杭州味'],
         'taizhou-food':['荣小馆：黄鱼年糕、沙蒜豆面；适合三个人多点几样一起分享','铁定鲜（温州菜）：米其林必比登与大众点评必吃榜上榜'],
         'quzhou-food':['衢村长：鸭头、辣味小炒与衢州风味','传家·来自农耕的传承：农家风味与衢州特色菜','宴三衢：适合三个人一起分享的衢州风味'],
